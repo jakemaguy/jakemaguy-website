@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPost } from './blog-post'
-
+import { BlogPostCreatorComponent } from '../blog-post-creator/blog-post-creator.component'
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-blog-page',
   templateUrl: './blog-page.component.html',
@@ -20,9 +21,20 @@ export class BlogPageComponent implements OnInit {
     }
   ];
 
-  constructor() { }
 
-  ngOnInit() {
+  constructor(public dialog: MatDialog) { }
+
+  ngOnInit() { }
+
+  openDialog() {
+    console.log("test")
+    let dialogRef = this.dialog.open(BlogPostCreatorComponent, {
+      height: '400px',
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("window was closed")
+    });
   }
-
 }
