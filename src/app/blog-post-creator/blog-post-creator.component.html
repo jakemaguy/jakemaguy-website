@@ -1,4 +1,17 @@
-<h2 mat-dialog-title>blog-post-creator works!</h2>
+<h2 mat-dialog-title>Create Blog Post</h2>
+<mat-dialog-content>
+    <mat-form-field class='example-form'>
+        <input #title matInput placeholder='Title'>
+    </mat-form-field>
+    <br>
+    <mat-form-field class='example-form'>
+        <input #date matInput placeholder='Date'>
+    </mat-form-field>
+    <br>
+    <mat-form-field class='example-form'>
+        <input #logoURL matInput placeholder='Logo URL'>
+    </mat-form-field>
+</mat-dialog-content>
 <mat-dialog-actions>
-    <button mat-dialog-close>Close</button>
+    <button [mat-dialog-close]='createPost(title.value, date.value, logoURL.value)'>Close</button>
 </mat-dialog-actions>

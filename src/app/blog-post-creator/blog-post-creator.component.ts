@@ -9,6 +9,10 @@ import { BlogPost } from '../blog-page/blog-post'
 })
 export class BlogPostCreatorComponent implements OnInit {
 
+  createPost(title: string, date: string, logoURL: string) {
+    return new BlogPost(title, date, logoURL);
+  }
+
   constructor(
     public dialogRef: MatDialogRef<BlogPostCreatorComponent>,
     @Inject(MAT_DIALOG_DATA) public data: BlogPost) { }
