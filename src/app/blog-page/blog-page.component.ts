@@ -3,6 +3,7 @@ import { BlogPost } from './blog-post'
 import { BlogPostCreatorComponent } from '../blog-post-creator/blog-post-creator.component'
 import { MatDialog } from '@angular/material/dialog';
 
+
 @Component({
   selector: 'app-blog-page',
   templateUrl: './blog-page.component.html',
@@ -34,7 +35,9 @@ export class BlogPageComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.addPost(result);
+      if (result != null){
+        this.addPost(result);
+      }
     });
   }
 

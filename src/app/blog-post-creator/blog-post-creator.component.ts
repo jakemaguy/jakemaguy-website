@@ -10,7 +10,12 @@ import { BlogPost } from '../blog-page/blog-post'
 export class BlogPostCreatorComponent implements OnInit {
 
   createPost(title: string, date: string, logoURL: string) {
-    return new BlogPost(title, date, logoURL);
+    if (title == "" || date == "" || logoURL == "") {
+      return null;
+    }
+    else {
+      return new BlogPost(title, date, logoURL);
+    }
   }
 
   constructor(
