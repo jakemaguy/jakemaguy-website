@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BlogPost } from './blog-post'
 import { BlogPostCreatorComponent } from '../blog-post-creator/blog-post-creator.component'
 import { MatDialog } from '@angular/material/dialog';
+import { FirebaseService } from '../firebase.service'
 
 
 @Component({
@@ -23,7 +24,8 @@ export class BlogPageComponent implements OnInit {
     }
   ];
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+    public firebase: FirebaseService) { }
 
   ngOnInit() { }
 
@@ -43,5 +45,6 @@ export class BlogPageComponent implements OnInit {
 
   addPost(post: BlogPost) {
     this.posts.push(post);
+    this.firebase.addPost(post);
   }
 }

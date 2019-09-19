@@ -34,7 +34,7 @@ const materialImports = [
     BlogPostCreatorComponent
   ],
   imports: [
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase, 'jmaguy-personal-website'),
  	  AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
