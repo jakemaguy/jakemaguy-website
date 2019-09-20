@@ -1,9 +1,9 @@
 <div>
     <div *ngFor='let post of posts'>
         <button>
-            <p>{{ post.title }}</p>
-            <p>{{ post.date }}</p>
-            <img src='{{ post.logoURL }}'>
+            <p>{{ post.payload.doc.data().title }}</p>
+            <p>{{ post.payload.doc.data().date }}</p>
+            <img src='{{ post.payload.doc.data().logoURL }}'>
         </button>
     </div>
     <button (click)="openDialog()">Add Post</button>

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { BlogPost } from './blog-page/blog-post';
-import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +8,10 @@ import { Observable, of } from 'rxjs';
 export class FirebaseService {
 
   constructor(public db: AngularFirestore ) { }
+
+  getPosts() {
+    return this.db.collection('blog_post').snapshotChanges();
+  }
 
   addPost(post: BlogPost) {
     return this.db.collection('blog_post').add({

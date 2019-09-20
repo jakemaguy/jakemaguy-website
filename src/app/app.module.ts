@@ -4,7 +4,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -35,7 +34,7 @@ const materialImports = [
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase, 'jmaguy-personal-website'),
- 	  AngularFirestoreModule,
+    AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
     materialImports
