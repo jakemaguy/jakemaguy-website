@@ -6,5 +6,6 @@
             <img src='{{ post.payload.doc.data().logoURL }}'>
         </button>
     </div>
-    <button (click)="openDialog()">Add Post</button>
+    <!-- <button (click)="openDialog()">Add Post</button> -->
+  <app-blog-post-creator-modal></app-blog-post-creator-modal>
 </div>

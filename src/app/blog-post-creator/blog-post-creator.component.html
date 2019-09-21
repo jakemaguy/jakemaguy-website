@@ -1,17 +1,38 @@
-<h2 mat-dialog-title>Create Blog Post</h2>
-<mat-dialog-content>
-    <mat-form-field class='example-form'>
-        <input #title matInput placeholder='Title'>
-    </mat-form-field>
-    <br>
-    <mat-form-field class='example-form'>
-        <input #date matInput placeholder='Date'>
-    </mat-form-field>
-    <br>
-    <mat-form-field class='example-form'>
-        <input #logoURL matInput placeholder='Logo URL'>
-    </mat-form-field>
-</mat-dialog-content>
-<mat-dialog-actions>
-    <button [mat-dialog-close]='createPost(title.value, date.value, logoURL.value)'>Close</button>
-</mat-dialog-actions>
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Create Post</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <mat-form-field class="example-full-width"> 
+            <input matInput placeholder="Post Title" value="Title">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+                <input matInput placeholder="Author" value="Author">
+        </mat-form-field>
+        <div class="form-group">
+          <label for="dateOfBirth">Date</label>
+          <div class="input-group">
+            <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
+  
+  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+  
+  <hr>
+  
+  <pre>{{closeResult}}</pre>
+  

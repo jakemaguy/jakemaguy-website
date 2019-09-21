@@ -3,6 +3,7 @@ import { BlogPost } from './blog-post'
 import { BlogPostCreatorComponent } from '../blog-post-creator/blog-post-creator.component'
 import { MatDialog } from '@angular/material/dialog';
 import { FirebaseService } from '../firebase.service'
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-blog-page',
@@ -11,9 +12,11 @@ import { FirebaseService } from '../firebase.service'
 })
 export class BlogPageComponent implements OnInit {
   posts: Array<any>;
+  closeResult: string;
 
   constructor(public dialog: MatDialog,
-    public firebase: FirebaseService) { }
+    public firebase: FirebaseService,
+    private modalService: NgbModal) { }
 
   ngOnInit() { 
     this.firebase.getPosts()
