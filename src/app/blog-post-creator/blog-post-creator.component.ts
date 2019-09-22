@@ -12,17 +12,16 @@ export class BlogPostCreatorComponent implements OnInit {
   closeResult: string;
 
   createPost(title: string, date: string, logoURL: string) {
-    if (title == "" || date == "" || logoURL == "") {
+    if (title === '' || date === '' || logoURL === '') {
       return null;
-    }
-    else {
+    } else {
       return new BlogPost(title, date, logoURL);
     }
   }
 
   constructor(
-    //public dialogRef: MatDialogRef<BlogPostCreatorComponent>,
-    //@Inject(MAT_DIALOG_DATA) public data: BlogPost,
+    // public dialogRef: MatDialogRef<BlogPostCreatorComponent>,
+    // @Inject(MAT_DIALOG_DATA) public data: BlogPost,
     private modalService: NgbModal) { }
 
   ngOnInit() {

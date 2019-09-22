@@ -9,6 +9,5 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class AppComponent {
   title = 'jake-maguy-website';
   constructor(db: AngularFirestore) {
-    
   }
 }
