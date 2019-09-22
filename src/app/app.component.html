@@ -1,7 +1,18 @@
-<h1>Jake Maguy</h1>
-<nav>
-  <button routerLink='/home-page'>Home</button>
-  <button routerLink='/blog-page'>Blog</button>
-  <button routerLink='/roasts-page'>Roasts</button>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand mb-0 h1" href="#">Jake Maguy</a>
+    <form class="form-inline">
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/home-page']" routerLinkActive="router-link-active" >Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/blog-page']" routerLinkActive="router-link-active" >Blog<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/roasts-page']" routerLinkActive="router-link-active" >Roasts<span class="sr-only">(current)</span></a>
+        </li>
+    </form>
 </nav>
-<router-outlet></router-outlet> <!-- Container for router results -->
+
+<div class="container-fluid">
+    <router-outlet></router-outlet> <!-- Container for router results -->
+</div>
