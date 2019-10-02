@@ -2,3 +2,7 @@
     font-size: 14px;
     max-width: 250px;
 }
+
+hr {
+    max-width: 40rem;
+}
