@@ -1,12 +1,29 @@
-<div>
-    <div *ngFor='let post of posts'>
-        <button>
-            <p>{{ post.payload.doc.data().title }}</p>
-            <p>{{ post.payload.doc.data().date }}</p>
-            <img src='{{ post.payload.doc.data().logoURL }}'>
-        </button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title">Card Title</p>
+                    <p class="card-text">Test</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title">Card Title</p>
+                    <p class="card-text">Test</p>
+                </div>
+            </div>
+         
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title">Card Title</p>
+                    <p class="card-text">Test</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- <button (click)="openDialog()">Add Post</button> -->
-  <!-- <app-blog-post-creator-modal></app-blog-post-creator-modal> -->
-  
 </div>

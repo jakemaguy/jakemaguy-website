@@ -17,6 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { InformationCardComponent } from './components/information-card/information-card.component';
 import { CardDataComponent } from './components/information-card/card_data/card_data';
+import { MarkdownModule } from 'ngx-markdown';
 
 // array to seperate material modules from regular ones
 const materialImports = [
@@ -41,7 +42,8 @@ const materialImports = [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    materialImports
+    materialImports,
+    MarkdownModule.forRoot()
   ],
   entryComponents: [BlogPostCreatorComponent],
   providers: [],
