@@ -6,3 +6,9 @@
 hr {
     max-width: 40rem;
 }
+
+@media (max-width: 420px) {
+  .d-flex {
+    flex-direction: column;
+  }
+}

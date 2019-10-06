@@ -37,7 +37,7 @@ const materialImports = [
     CardDataComponent
   ],
   imports: [
-    AngularFireModule.initializeApp(environment.firebase, 'jmaguy-website'),
+    AngularFireModule.initializeApp(environment.firebase, 'jake-maguy'),
     AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
