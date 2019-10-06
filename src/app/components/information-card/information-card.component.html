@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="d-flex justify-content-center align-items-center">
-                <div class="order-1 p-4" *ngIf="index % 2 === 0 || checkIfMobile(); else odd">
+                <div class="order-1 p-4" *ngIf="index % 2 === 0; else odd">
                     <img [src]="card.image" alt="" class="img-fluid" height="150" width="150">
                 </div>
                 <ng-template #odd>
@@ -10,7 +10,7 @@
                         <img [src]="card.image" alt="" class="img-fluid" height="150" width="150">
                     </div>
                 </ng-template>
-                <div class="order-2 p-1" *ngIf="index % 2 === 0 || checkIfMobile(); else odd2">
+                <div class="order-2 p-1" *ngIf="index % 2 === 0; else odd2">
                     <h3 class="text-center">{{ card.title }}</h3>
                     <p class="text-left">
                         {{ card.content }}

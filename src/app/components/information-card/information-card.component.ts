@@ -17,8 +17,4 @@ export class InformationCardComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  checkIfMobile() {
-    return (window.screen.availWidth <= 420) ? true : false;
-  }
 }

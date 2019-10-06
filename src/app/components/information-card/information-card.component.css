@@ -11,4 +11,7 @@ hr {
   .d-flex {
     flex-direction: column;
   }
+  .order-2 {
+    order: 1;
+  }
 }
