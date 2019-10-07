@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RoastsPageComponent } from './roasts-page/roasts-page.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
-import { BlogPostCreatorComponent } from './blog-post-creator/blog-post-creator.component';
 // Material Imports
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -32,7 +31,6 @@ const materialImports = [
     HomePageComponent,
     RoastsPageComponent,
     BlogPageComponent,
-    BlogPostCreatorComponent,
     InformationCardComponent,
     CardDataComponent
   ],
@@ -45,7 +43,7 @@ const materialImports = [
     materialImports,
     MarkdownModule.forRoot()
   ],
-  entryComponents: [BlogPostCreatorComponent],
+  entryComponents: [],
   providers: [],
   bootstrap: [AppComponent]
 })
