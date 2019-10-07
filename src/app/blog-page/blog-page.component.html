@@ -5,7 +5,7 @@
         </header>
     <!-- <div class="row"> -->
         <div class="d-flex justify-content-around">
-            <div class="card-deck" *ngFor="let blogPost of blogPosts | async">
+            <div class="card-deck" *ngFor="let blogPost of blogPosts">
                 <div class="card">
                     <img [src]="blogPost.logoURL" alt="" class="card-img-top img-fluid">
                     <div class="card-body">

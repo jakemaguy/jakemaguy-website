@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { BlogPost } from './blog-post.model';
+import { FirebaseFetchService } from '../firebase-fetch.service';
 
 @Component({
   selector: 'app-blog-page',
@@ -9,15 +9,14 @@ import { BlogPost } from './blog-post.model';
   styleUrls: ['./blog-page.component.css']
 })
 export class BlogPageComponent implements OnInit {
-  blogCollection: AngularFirestoreCollection<BlogPost>;
-  blogPosts: Observable<BlogPost[]>;
+  blogPosts: BlogPost[];
 
   posts: Array<any>;
   closeResult: string;
 
-  constructor(db: AngularFirestore) {
-    this.blogCollection = db.collection<BlogPost>('blog_posts');
-    this.blogPosts = this.blogCollection.valueChanges();
+  constructor(private dbFetch: FirebaseFetchService) {
+    this.dbFetch.getPosts()
+    .subscribe(blogPosts => this.blogPosts = blogPosts);
   }
 
   ngOnInit() {
