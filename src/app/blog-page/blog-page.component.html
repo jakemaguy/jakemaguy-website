@@ -5,26 +5,17 @@
         </header>
     <!-- <div class="row"> -->
         <div class="d-flex justify-content-around">
-            <div class="card-deck">
+            <div class="card-deck" *ngFor="let blogPost of blogPosts | async">
                 <div class="card">
+                    <img [src]="blogPost.logoURL" alt="" class="card-img-top img-fluid">
                     <div class="card-body">
-                        <p class="card-title">Card Title</p>
-                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam facilis molestias eveniet perferendis harum provident illum ullam repudiandae veniam veritatis autem quam doloremque, ratione totam commodi impedit amet neque eius!</p>
-                        <a href="" class="card-link">Read More</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title">Card Title</p>
-                        <p class="card-text">Test</p>
-                        <a href="" class="card-link">Read More</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title">Card Title</p>
-                        <p class="card-text">Test</p>
-                        <a href="" class="card-link">Read More</a>
+                        <p class="card-text"><small class="text-muted">{{ blogPost.date }}</small></p>
+                        <h5 class="card-title">{{ blogPost.title }}</h5>
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam facilis molestias
+                            eveniet perferendis harum provident illum ullam repudiandae veniam veritatis autem quam doloremque, ratione
+                            totam commodi impedit amet neque eius!</p>
+                        <a [routerLink]="['/blog-page', blogPost.title]" routerLinkActive="router-link-active" class="card-link">Read
+                            More</a>
                     </div>
                 </div>
             </div>

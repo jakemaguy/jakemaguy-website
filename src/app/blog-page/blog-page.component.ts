@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-
-export interface BlogPost {
-  title: string;
-  date: string;
-  content: string;
-  titleimage: string;
-}
+import { BlogPost } from './blog-post.model';
 
 @Component({
   selector: 'app-blog-page',
@@ -15,14 +9,15 @@ export interface BlogPost {
   styleUrls: ['./blog-page.component.css']
 })
 export class BlogPageComponent implements OnInit {
-  blogPosts: Observable<any[]>;
+  blogCollection: AngularFirestoreCollection<BlogPost>;
+  blogPosts: Observable<BlogPost[]>;
 
   posts: Array<any>;
   closeResult: string;
 
   constructor(db: AngularFirestore) {
-    this.blogPosts = db.collection('blog_posts').valueChanges();
-    console.log(this.blogPosts);
+    this.blogCollection = db.collection<BlogPost>('blog_posts');
+    this.blogPosts = this.blogCollection.valueChanges();
   }
 
   ngOnInit() {
