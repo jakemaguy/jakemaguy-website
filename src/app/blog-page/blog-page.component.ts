@@ -15,11 +15,13 @@ export class BlogPageComponent implements OnInit {
   closeResult: string;
 
   constructor(private dbFetch: FirebaseFetchService) {
-    this.dbFetch.getPosts()
-    .subscribe(blogPosts => this.blogPosts = blogPosts);
   }
 
   ngOnInit() {
+    this.dbFetch.getPosts()
+      .subscribe((blogPosts: BlogPost[]) => {
+        this.blogPosts = blogPosts;
+      });
   }
 }
 

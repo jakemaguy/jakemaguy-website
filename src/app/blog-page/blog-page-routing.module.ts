@@ -5,7 +5,7 @@ import { BlogPageDetailComponent } from './blog-page-detail/blog-page-detail.com
 
 const blogRoutes: Routes = [
     { path: 'blog-page', component: BlogPageComponent },
-    { path: 'blog-page/:title', component: BlogPageDetailComponent }
+    { path: 'blog-page/:id', component: BlogPageDetailComponent }
 ];
 
 @NgModule({

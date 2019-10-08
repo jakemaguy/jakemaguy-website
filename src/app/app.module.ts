@@ -18,7 +18,7 @@ import { InformationCardComponent } from './components/information-card/informat
 import { CardDataComponent } from './components/information-card/card_data/card_data';
 import { MarkdownModule } from 'ngx-markdown';
 import { BlogPageDetailComponent } from './blog-page/blog-page-detail/blog-page-detail.component';
-
+import { BlogPostRoutingModule } from './blog-page/blog-page-routing.module';
 // array to seperate material modules from regular ones
 const materialImports = [
   BrowserAnimationsModule,
@@ -41,6 +41,7 @@ const materialImports = [
     AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
+    BlogPostRoutingModule,
     NgbModule,
     materialImports,
     MarkdownModule.forRoot()

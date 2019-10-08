@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { BlogPost } from './blog-page/blog-post.model';
 
 @Injectable({
@@ -16,13 +16,16 @@ export class FirebaseFetchService {
 
   getPosts(): Observable<BlogPost[]> {
     this.blogCollection = this.db.collection<BlogPost>('blog_posts');
-    return this.blogCollection.valueChanges();
+    return this.blogCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as BlogPost;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
   }
 
-  getPost(title: string) {
-    return this.getPosts().pipe(
-      map((blogPosts: BlogPost[]) => blogPosts.find(
-        blogPost => blogPost.title === title))
-      );
+  getPost(id: string): Observable<BlogPost> {
+    return this.db.doc<BlogPost>(`blog_posts/${id}`).valueChanges();
   }
 }

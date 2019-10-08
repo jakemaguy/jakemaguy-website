@@ -7,7 +7,7 @@ import { RoastsPageComponent } from './roasts-page/roasts-page.component'
 const routes: Routes = [
   { path: '', redirectTo: '/home-page', pathMatch: 'full' },
   { path: 'home-page', component: HomePageComponent },
-  { path: 'blog-page', component: BlogPageComponent },
+  //{ path: 'blog-page', component: BlogPageComponent },
   { path: 'roasts-page', component: RoastsPageComponent }
 ];
 
