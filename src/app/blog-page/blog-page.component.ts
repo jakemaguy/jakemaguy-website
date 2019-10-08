@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BlogPost } from './blog-post.model';
 import { FirebaseFetchService } from '../firebase-fetch.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-blog-page',

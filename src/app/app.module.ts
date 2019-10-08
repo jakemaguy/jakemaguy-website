@@ -16,9 +16,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { InformationCardComponent } from './components/information-card/information-card.component';
 import { CardDataComponent } from './components/information-card/card_data/card_data';
-import { MarkdownModule } from 'ngx-markdown';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { BlogPageDetailComponent } from './blog-page/blog-page-detail/blog-page-detail.component';
 import { BlogPostRoutingModule } from './blog-page/blog-page-routing.module';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 // array to seperate material modules from regular ones
 const materialImports = [
   BrowserAnimationsModule,
@@ -44,7 +46,8 @@ const materialImports = [
     BlogPostRoutingModule,
     NgbModule,
     materialImports,
-    MarkdownModule.forRoot()
+    HttpClientModule,
+    MarkdownModule.forRoot({ loader: HttpClient })
   ],
   entryComponents: [],
   providers: [],
