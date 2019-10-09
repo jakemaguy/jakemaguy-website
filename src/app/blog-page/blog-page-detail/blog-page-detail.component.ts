@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BlogPost } from '../blog-post.model';
-import { Observable } from 'rxjs';
 import { FirebaseFetchService } from '../../firebase-fetch.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';

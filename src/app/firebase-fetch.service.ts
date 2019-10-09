@@ -26,6 +26,11 @@ export class FirebaseFetchService {
   }
 
   getPost(id: string): Observable<BlogPost> {
-    return this.db.doc<BlogPost>(`blog_posts/${id}`).valueChanges();
+    return this.db.doc<BlogPost>(`blog_posts/${id}`).snapshotChanges().pipe(
+      map(actions => {
+      const data = actions.payload.data() as BlogPost;
+      const id = actions.payload.id;
+      return { id, ...data };
+    }));
   }
 }
