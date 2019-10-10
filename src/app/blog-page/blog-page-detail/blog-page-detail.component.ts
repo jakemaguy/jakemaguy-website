@@ -16,15 +16,20 @@ export class BlogPageDetailComponent implements OnInit {
   constructor(
     private dbFetch: FirebaseFetchService,
     private route: ActivatedRoute) {
-      this.route.paramMap.pipe(
-        switchMap((params: ParamMap) =>
-          this.dbFetch.getPost(params.get('id')))
-      ).subscribe((blogPost: BlogPost) => {
-        this.blogPost = blogPost;
-      });
   }
 
   ngOnInit() {
+    this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+        this.dbFetch.getPost(params.get('id')))
+    ).subscribe(object => {
+      object.subscribe(e => {
+        console.log();
+        this.blogPost = new BlogPost(
+          e.id, e.title, e.date, e.content, e.logoURL
+        );
+      });
+    });
   }
 
 }

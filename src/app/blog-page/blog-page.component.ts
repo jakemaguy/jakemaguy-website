@@ -10,7 +10,7 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./blog-page.component.css']
 })
 export class BlogPageComponent implements OnInit {
-  blogPosts: BlogPost[];
+  blogPosts: BlogPost[] = [];
 
   posts: Array<any>;
   closeResult: string;
@@ -20,9 +20,17 @@ export class BlogPageComponent implements OnInit {
 
   ngOnInit() {
     this.dbFetch.getPosts()
-      .subscribe((blogPosts: BlogPost[]) => {
-        this.blogPosts = blogPosts;
+    .then(result => {
+      result.subscribe(object => {
+        object.forEach(elem => {
+          if (elem) {
+            this.blogPosts.push(new BlogPost(
+              elem.id, elem.title, elem.date,
+              elem.content, elem.logoURL));
+          }
+        });
       });
+    });
   }
 }
 
