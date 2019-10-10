@@ -14,18 +14,18 @@ export class FirebaseFetchService {
 
   constructor(public db: AngularFirestore) { }
 
-  getPosts(): Observable<BlogPost[]> {
+  async getPosts() {
     this.blogCollection = this.db.collection<BlogPost>('blog_posts');
     return this.blogCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as BlogPost;
+        const data = a.payload.doc.data();
         const id = a.payload.doc.id;
         return { id, ...data };
       }))
     );
   }
 
-  getPost(id: string): Observable<BlogPost> {
+  async getPost(id: string) {
     return this.db.doc<BlogPost>(`blog_posts/${id}`).snapshotChanges().pipe(
       map(actions => {
       const data = actions.payload.data() as BlogPost;
