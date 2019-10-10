@@ -11,18 +11,20 @@ import { switchMap } from 'rxjs/operators';
 })
 export class BlogPageDetailComponent implements OnInit {
   blogPost: BlogPost;
+  id: string;
 
   constructor(
     private dbFetch: FirebaseFetchService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {
+      this.route.paramMap.pipe(
+        switchMap((params: ParamMap) =>
+          this.dbFetch.getPost(params.get('id')))
+      ).subscribe((blogPost: BlogPost) => {
+        this.blogPost = blogPost;
+      });
+  }
 
   ngOnInit() {
-    this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.dbFetch.getPost(params.get('id')))
-    ).subscribe((blogPost: BlogPost) => {
-      this.blogPost = blogPost;
-    });
   }
 
 }
