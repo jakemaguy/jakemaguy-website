@@ -3,22 +3,26 @@
         <header class="col-md-12 text-center">
             <h1>Posts</h1>
         </header>
-    <!-- <div class="row"> -->
-        <div class="d-flex justify-content-around">
-            <div class="card-deck" *ngFor="let blogPost of blogPosts">
-                <div class="card">
-                    <img [src]="blogPost.logoURL" alt="" class="card-img-top img-fluid">
-                    <div class="card-body">
-                        <p class="card-text"><small class="text-muted">{{ blogPost.date.toMillis() | date:'LLLL dd, yyyy' }}</small></p>
-                        <h5 class="card-title">{{ blogPost.title }}</h5>
-                        <p class="card-text">
-                            {{ blogPost.content }}
-                        </p>
-                        <a [routerLink]="['/blog-page', blogPost.id]" routerLinkActive="router-link-active" class="card-link">Read
-                            More</a>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="d-flex justify-content-around">
+                <div class="card-deck">
+                    <div class="card" *ngFor="let blogPost of blogPosts">
+                        <img [src]="blogPost.logoURL" alt="" class="card-img-top img-fluid">
+                        <div class="card-body">
+                            <p class="card-text"><small
+                                    class="text-muted">{{ blogPost.date.toMillis() | date:'LLLL dd, yyyy' }}</small></p>
+                            <h5 class="card-title">{{ blogPost.title }}</h5>
+                            <p class="card-text">
+                                {{ blogPost.content }}
+                            </p>
+                            <a [routerLink]="['/blog-page', blogPost.id]" routerLinkActive="router-link-active"
+                                class="card-link">Read
+                                More</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    <!--</div>-->
+    </div>
 </div>
