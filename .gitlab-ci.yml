@@ -1,0 +1,20 @@
+image: "trion/ng-cli"
+
+before_script:
+  - npm install
+
+app-build:
+  stage: build
+  artifacts:
+    paths:
+      - dist/
+  script: ng build --prod
+
+deploy-production:
+  stage: deploy
+  dependencies:
+    - app-build
+  script: npm run deploy
+  only:
+    - master
+
