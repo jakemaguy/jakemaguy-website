@@ -1,6 +1,5 @@
-image: "trion/ng-cli"
-
 app-build:
+  image: "trion/ng-cli"
   before_script:
     - npm install
   stage: build
@@ -10,6 +9,7 @@ app-build:
   script: ng build --prod
 
 deploy-production:
+  image: "devillex/docker-firebase"
   stage: deploy
   dependencies:
     - app-build
