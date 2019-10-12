@@ -9,7 +9,7 @@ app-build:
   script: ng build --prod
 
 deploy-production:
-  image: "mitelone/firebase-cli"
+  image: "devillex/docker-firebase"
   stage: deploy
   dependencies:
     - app-build
