@@ -29,6 +29,10 @@ export class BlogPageComponent implements OnInit {
               elem.content, elem.logoURL));
           }
         });
+        this.blogPosts.sort((a: any, b: any) => {
+          console.log(a.date.seconds);
+          return +new Date(b.date.seconds) - +new Date(a.date.seconds);
+        });
       });
     });
   }
