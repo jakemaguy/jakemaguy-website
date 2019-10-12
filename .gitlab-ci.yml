@@ -1,9 +1,7 @@
-image: "trion/ng-cli"
-
-before_script:
-  - npm install
-
 app-build:
+  image: "trion/ng-cli"
+  before_script:
+    - npm install
   stage: build
   artifacts:
     paths:
@@ -11,10 +9,11 @@ app-build:
   script: ng build --prod
 
 deploy-production:
+  image: "mitelone/firebase-cli"
   stage: deploy
   dependencies:
     - app-build
-  script: npm run deploy
+  script: firebase deploy --non-interactive --token $FIREBASE_TOKEN
   only:
     - master
 
