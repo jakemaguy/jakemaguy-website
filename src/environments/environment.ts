@@ -7,5 +7,5 @@ export const environment = {
         projectId: 'jake-maguy',
         storageBucket: 'gs://jake-maguy.appspot.com',
         messagingSenderId: '563860953218'
-      }
-  };
+    }
+};

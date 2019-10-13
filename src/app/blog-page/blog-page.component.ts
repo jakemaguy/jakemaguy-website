@@ -11,7 +11,6 @@ import { DatePipe } from '@angular/common';
 })
 export class BlogPageComponent implements OnInit {
   blogPosts: BlogPost[] = [];
-
   posts: Array<any>;
   closeResult: string;
 
@@ -30,7 +29,6 @@ export class BlogPageComponent implements OnInit {
           }
         });
         this.blogPosts.sort((a: any, b: any) => {
-          console.log(a.date.seconds);
           return +new Date(b.date.seconds) - +new Date(a.date.seconds);
         });
       });
