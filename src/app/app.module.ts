@@ -18,6 +18,7 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { BlogPageDetailComponent } from './blog-page/blog-page-detail/blog-page-detail.component';
 import { BlogPostRoutingModule } from './blog-page/blog-page-routing.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
   imports: [
     AngularFireModule.initializeApp(environment.firebase, 'jake-maguy'),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     BrowserModule,
     AppRoutingModule,
     BlogPostRoutingModule,
@@ -40,7 +42,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     MarkdownModule.forRoot({ loader: HttpClient })
   ],
   entryComponents: [],
-  providers: [],
+  providers: [
+    { provide: StorageBucket, useValue: environment.firebase.storageBucket }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
