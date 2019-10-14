@@ -19,6 +19,7 @@ import { BlogPageDetailComponent } from './blog-page/blog-page-detail/blog-page-
 import { BlogPostRoutingModule } from './blog-page/blog-page-routing.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
     BlogPageComponent,
     InformationCardComponent,
     CardDataComponent,
-    BlogPageDetailComponent
+    BlogPageDetailComponent,
+    FooterComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase, 'jake-maguy'),
