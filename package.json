@@ -33,6 +33,7 @@
     "firebase": "^6.6.1",
     "firebase-tools": "^7.5.0",
     "jquery": "^3.4.1",
+    "mdbootstrap": "^4.8.10",
     "ngx-markdown": "^8.1.1",
     "popper.js": "^1.15.0",
     "rxjs": "~6.4.0",

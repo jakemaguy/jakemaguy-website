@@ -2,27 +2,18 @@
     text-align: center;
 }
 
-.container-fluid {
-    height: 120vw;
-    width: -webkit-fill-available;
+#intro {
+    height: 100%;
     background-image: url(https://firebasestorage.googleapis.com/v0/b/jake-maguy.appspot.com/o/pictures%2Fprofile.jpg?alt=media&token=b3ad041e-eab6-4573-899f-3ee0df98c6d1);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: 40%;
-    background-position-y: 30%;
-    background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    -webkit-filter: contrast(50%);
-    filter: contrast(50%);
+    background-position-x: 40%;
+    background-position-y: 40%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin-bottom: 80px;
-}
-
-@media screen and (min-width: 1025px) {
-    .container-fluid {
-        height: 50vw;
-    }
 }
 
 img {
