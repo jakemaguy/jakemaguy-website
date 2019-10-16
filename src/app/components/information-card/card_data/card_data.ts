@@ -20,7 +20,7 @@ export class CardDataComponent {
     },
     {
         title: 'Full Stack Experience',
-        content: `I am a backend engineer at my current position.  I specialized in MySQL and MSSQL, fetching and displaying sensitive customer data.  Throughout the work of creating this website, I learned NoSQL.  On the front-end side, making this website responsive on all devices was a big priority of mine.`,
+        content: `I am a backend engineer at my current position.  At work, I have experience fetching sensitive customer data from MySQL and MSSQL databases.  Throughout creating this website, I learned NoSQL.  On the front-end side, making this website responsive on all devices was a big priority of mine.`,
         image: 'https://icons-for-free.com/iconfiles/png/512/file+sql+icon-1320183612970878250.png'
     },
     {
