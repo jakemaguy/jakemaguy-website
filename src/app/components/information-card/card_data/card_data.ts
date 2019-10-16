@@ -14,30 +14,24 @@ import { EventEmitter } from 'events';
 export class CardDataComponent {
     // tslint:disable-next-line: no-input-rename
     inputcardData = [{
-        title: 'Proficient With Angular',
-        content: ` I took the time to dive straight into the deep end of angular.  I purchased
-        a Udemy course which went over all the necessary components of Angular.
-        I undestand the paradigms behind the angular framework, and apply them to my work. 
-        Also this website was created using angular.`,
+        title: 'Proficient in Angular',
+        content: `I am a self-taught Angular Developer, who learned the framework as a passion project.  I wanted an online platform to showcase my experience quickly and easily.  This website is the result of many hours teaching myself fundamental concepts of angular and applying proper design patterns.`,
         image: 'https://www.stickpng.com/assets/images/5847ea22cef1014c0b5e4833.png'
     },
     {
         title: 'Full Stack Experience',
-        content: `As a backend engineer at my current company, I understand what needs to happen
-        behind the scenes.  I have experience with NoSQL, Microsoft SQL Server, MySQL, and Oracle databases.`,
+        content: `I am a backend engineer at my current position.  I specialized in MySQL and MSSQL, fetching and displaying sensitive customer data.  Throughout the work of creating this website, I learned NoSQL.  On the front-end side, making this website responsive on all devices was a big priority of mine.`,
         image: 'https://icons-for-free.com/iconfiles/png/512/file+sql+icon-1320183612970878250.png'
     },
     {
         title: 'Languages',
         content: `I have experience with object oriented languages such as Typescript, Python, C#,
-        and C++.  I am also open to learning new languages.  Not knowing a language has never stopped me before.`,
+        and C++.  I am also open to learn new languages and technologies.`,
         image: 'https://cdn.worldvectorlogo.com/logos/typescript.svg'
     },
     {
-        title: 'Come out of your shell',
-        content: `As a backend engineer, I am profficient in various linux sysadmin tasks.  At my current company, I have
-        written numerous bash functions and scripts to automate repetive tasks.  It's always good to know someone who is good
-        with grep and regular expressions too.`,
+        title: 'Command Line Experience',
+        content: `I know how to use the UNIX command line effectively.  I have experience writing bash scripts, using regular expressions, grepping files, using vim, and many more.`,
         image: 'https://external-preview.redd.it/V77U-n3OuvNr2I14hRYUcyXBJ1C9dEMV3HUt3dAIViw.png?auto=webp&s=20d05cf394bd203741ddfdffa904af94fdd90544'
     }
     ];
